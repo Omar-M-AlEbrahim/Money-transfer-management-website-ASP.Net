@@ -1,0 +1,23 @@
+<form [formGroup]="editForm" (ngSubmit)="submitForm()"> 
+  <mat-form-field>
+    <mat-label>Name</mat-label> <!-- الاسم -->
+    <input matInput placeholder="Name" formControlName="Name"> <!--  الإدخال لاسم المكتب -->
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Country</mat-label> <!-- البلد -->
+    <input matInput placeholder="Country" formControlName="Country"> <!--  الإدخال لبلد المكتب -->
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Governorate</mat-label> <!-- المحافظة -->
+    <input matInput placeholder="Governorate" formControlName="Governorate"> <!--  الإدخال لمحافظة المكتب -->
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>City</mat-label> <!-- المدينة -->
+    <input matInput placeholder="City" formControlName="City"> <!--  الإدخال لمدينة المكتب -->
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Current Balance</mat-label> <!-- الرصيد الحالي -->
+    <input matInput placeholder="Current Balance" formControlName="currentBalance" type="number"> <!--  الإدخال للرصيد الحالي -->
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">update</button> <!-- زر إرسال النموذج -->
+</form>

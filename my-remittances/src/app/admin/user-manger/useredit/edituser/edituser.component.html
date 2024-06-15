@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>تعديل بيانات المستخدم</h2>
+    <form #editForm="ngForm" (ngSubmit)="submitForm(editForm)">
+      <mat-form-field class="form-group">
+        <mat-label>اسم المستخدم:</mat-label>
+        <input required ngModel name="userName" type="text" matInput id="userName" [(ngModel)]="userToEdit.userName">
+        <mat-error *ngIf="editForm.controls['userName'] && editForm.controls['userName'].touched">
+          هذا الحقل مطلوب
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-group">
+        <mat-label>البريد الإلكتروني:</mat-label>
+        <input required ngModel name="email" type="email" matInput id="email" [(ngModel)]="userToEdit.email">
+        <mat-error *ngIf="editForm.controls['email'] && editForm.controls['email'].touched">
+          يرجى إدخال بريد إلكتروني صحيح
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-group">
+        <mat-label>كلمة المرور:</mat-label>
+        <input required ngModel name="password" type="password" matInput id="password" [(ngModel)]="userToEdit.userPassword">
+        <mat-error *ngIf="editForm.controls['password'] && editForm.controls['password'].touched">
+          هذا الحقل مطلوب
+        </mat-error>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">تحديث البيانات</button>
+    </form>
+  </div>
+  

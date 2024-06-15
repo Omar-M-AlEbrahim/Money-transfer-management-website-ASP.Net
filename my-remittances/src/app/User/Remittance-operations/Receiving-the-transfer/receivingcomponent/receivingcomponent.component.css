@@ -1,0 +1,41 @@
+.container{
+  margin-top: 20px; /* مسافة العلوية للحاوية */
+  margin-bottom: 15px; /* مسافة السفلية للحاوية */
+  height: 500px; /* ارتفاع الحاوية */
+}
+
+.table-container {
+  overflow-x: auto; /* تمكين التمرير الأفقي للجدول إذا كانت العمودية غير كافية */
+}
+
+table {
+  width: 100%; /* عرض الجدول ليكون بنسبة 100% */
+  border-collapse: collapse; /* دمج الحدود بين خلايا الجدول */
+  border-radius: 5px; /* زوايا مستديرة للجدول */
+  overflow: hidden; /* إخفاء أي محتوى يتجاوز حدود الجدول */
+}
+
+th, td {
+  text-align: center; /* محاذاة النص في الخلايا لتكون في الوسط */
+}
+
+th {
+  font-weight: bold; /* جعل النص في رأس الجدول بخط عريض */
+  background-color: #e6dee4; /* لون خلفية رأس الجدول */
+}
+
+tr:nth-child(odd) {
+  background-color: #f8f9fa; /* لون خلفية الصفوف الفردية */
+}
+
+tr:nth-child(even) {
+  background-color: #e9ecef; /* لون خلفية الصفوف الزوجية */
+}
+
+th, td {
+  border-bottom: 1px solid #ced4da; /* لون خط الحدود بين الصفوف */
+}
+
+th:last-child, td:last-child {
+  border-right: 1px solid #ced4da; /* لون خط الحدود بين الأعمدة */
+}

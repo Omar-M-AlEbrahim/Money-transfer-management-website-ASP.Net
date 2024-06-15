@@ -1,0 +1,34 @@
+<div class="container">
+  <mat-card class="card">
+    <mat-card-header class="header">
+      <mat-icon class="icon">lock</mat-icon> <!-- أيقونة القفل -->
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+   
+    <form #loginform="ngForm" (ngSubmit)="login(loginform)"> <!-- تصحيح الخطأ الإملائي -->
+      <mat-card-content>
+        <mat-form-field class="full-width field-with-icon">
+          <mat-icon matPrefix>person</mat-icon>
+          <mat-label>Username</mat-label>
+          <input matInput [(ngModel)]="loginService.username" name="username" placeholder="Enter your username">
+        </mat-form-field>
+        <mat-form-field class="full-width field-with-icon">
+          <mat-icon matPrefix>vpn_key</mat-icon>
+          <mat-label>Password</mat-label>
+          <input matInput [(ngModel)]="loginService.password" name="password" type="{{ showPassword ? 'text' : 'password' }}" placeholder="Enter your password">
+          <mat-icon matSuffix (click)="togglePasswordVisibility()">
+            {{ showPassword ? 'visibility' : 'visibility_off' }}
+          </mat-icon>
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" class="login-button">LOGIN</button>
+      </mat-card-content>
+    </form>
+  </mat-card>
+
+  <div class="welcome-text">
+    <h4>
+      Welcome to our wonderful website,<strong>My Remittance</strong>You can deal with all the offices in our station.
+    </h4>
+  </div>
+</div>

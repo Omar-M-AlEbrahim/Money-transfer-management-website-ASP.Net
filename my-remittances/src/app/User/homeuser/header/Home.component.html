@@ -1,0 +1,72 @@
+<mat-card class="card">
+  <div style="display: flex;">
+      <div class="card-content" style="width: 400px;">
+          <mat-card-title>Welcome {{root?.user?.userName}} to the express transfer service!</mat-card-title>
+          <mat-card-subtitle>We at the Express Transfer Service are proud to provide express transfer services at competitive prices and distinguished customer service. Whether you need to send money within the country or anywhere in the world, we are here to help you complete your transactions easily and securely.</mat-card-subtitle>
+      </div>
+      <div class="card-image">
+          <img src="assets/images/_6aa61dc7-8b68-4069-82e8-4d32900c468f.jpeg" width="100" alt="صورة البطاقة">
+      </div>
+  </div>
+</mat-card>
+
+<div class="small-cards-container">
+  <!-- بطاقة المنتج الكلي -->
+  <mat-card class="small-card">
+      <mat-card-header>
+          <mat-card-title> حوالاتك </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <canvas id="totalProductChart"></canvas>
+      </mat-card-content>
+  </mat-card>
+  
+  <!-- بطاقة بيانات المستخدم -->
+  <mat-card class="small-card">
+      <mat-card-header>
+          <mat-card-title>Your Data</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <ng-container>
+              <div class="userType">
+                  <mat-icon>person</mat-icon> User Role: {{ root?.role?.name }}
+              </div>
+          </ng-container>
+      </mat-card-content>
+      <mat-card-content>
+          <ng-container>
+              <div class="userType">
+                  <mat-icon>business</mat-icon> Office Name: {{ office?.name }}
+              </div>
+          </ng-container>
+      </mat-card-content>
+      <mat-card-content>
+          <ng-container *ngIf="root">
+              <div class="userType">
+                  <mat-icon>attach_money</mat-icon> Current Amount: {{ office?.currentBalance | currency:'USD' }}
+              </div>
+          </ng-container>
+      </mat-card-content>
+      <mat-card-content>
+          <ng-container>
+              <div class="userType">
+                  <mat-icon>person</mat-icon> User Name: {{ root?.user?.userName }}
+              </div>
+          </ng-container>
+      </mat-card-content>
+      <mat-card-content>
+          <ng-container>
+              <div class="userType">
+                  <mat-icon>email</mat-icon> Email: {{ root?.user?.email }}
+              </div>
+          </ng-container>
+      </mat-card-content>
+      <mat-card-content>
+          <ng-container>
+              <div class="userType">
+                  <mat-icon>date_range</mat-icon> Date the account was created: {{ root?.user?.updatedAt | date }}
+              </div>
+          </ng-container>
+      </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,38 @@
+/* CSS للتصميم */
+.container {
+    display: flex;
+    justify-content: space-around; /* توزيع العناصر بالتساوي */
+    align-items: center;
+    height: 100vh; /* ارتفاع كامل الشاشة */
+  }
+  
+  .card {
+    width: 350px; /* عرض البطاقة */
+    border-radius: 8px; /* تقريب الحواف */
+  }
+  
+  .icon {
+    margin-right: 8px; /* مسافة بين الأيقونة والنص */
+  }
+  
+  .full-width {
+    width: 100%; /* عرض كامل داخل البطاقة */
+  }
+  
+  .forgot-password {
+    display: block;
+    text-align: right;
+    margin-top: 8px; /* مسافة فوق الرابط */
+  }
+  
+  .login-button {
+    width: 300px;
+    margin-top: 16px; /* مسافة فوق الزر */
+  }
+  
+.welcome-text {
+    max-width: 400px; /* تحديد العرض الأقصى للنص */
+    color: #fff; /* لون النص */
+    margin-right: 20px; /* هامش على اليمين */
+  }
+  

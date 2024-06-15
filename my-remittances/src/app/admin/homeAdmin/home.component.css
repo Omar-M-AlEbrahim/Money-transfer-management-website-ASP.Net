@@ -1,0 +1,64 @@
+.card {
+  height: 230px;
+  background-color: #c5b4b4; /* لون الخلفية */
+  border-radius: 8px; /* تقريب الحواف */
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12); /* الظل */
+  margin: 16px; /* الهامش حول البطاقة */
+  padding: 16px; /* البطانة داخل البطاقة */
+  align-items: start; /* محاذاة العناصر ببداية المحور */
+  justify-content: space-between; /* توزيع العناصر بالتساوي */
+}
+
+.card-image {
+  border: rebeccapurple 1px solid; /* إضافة حدود للصورة */
+  margin-top: 30px; /* ترك مسافة من الأعلى */
+  height: 100px; /* تحديد ارتفاع الصورة */
+  overflow: hidden; /* إخفاء الأجزاء الزائدة من الصورة */
+  border-radius: 20px; /* تقريب الحواف */
+  margin-left: 370px; /* ترك مسافة من اليسار */
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5), 0px 3px 1px 0px rgba(0,0,0,0.14), 6px 0px 0px -1px rgba(0,0,0,0.9); /* الظل */
+  opacity: 70%; /* شفافية الصورة */
+}
+
+.small-cards-container {
+  display: flex;
+  flex-direction: row; /* توزيع البطاقات بشكل أفقي */
+  justify-content: space-between; /* توزيع البطاقات بالتساوي */
+}
+
+.mat-elevation-z8 {
+  overflow: auto; /* إضافة خاصية التمرير الأوتوماتيكي */
+}
+
+.small-card {
+  /* أسلوب التصميم الحالي للكرت */
+  background-color: #c5b4b4; /* لون الخلفية */
+  border-radius: 8px; /* تقريب الحواف */
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12); /* الظل */
+  margin-top: 16px; /* ترك مسافة من الأعلى */
+  padding: 5px; /* البطانة داخل الكرت */
+  width: calc(50% - 16px); /* توزيع البطاقات بالتساوي في السطر */
+  overflow: auto; /* إضافة خاصية التمرير الأوتوماتيكي */
+}
+
+table {
+  width: 100%; /* جعل عرض الجدول يمتد على عرض الكرت */
+  border-collapse: collapse; /* دمج الحدود */
+  background-color: rgba(0, 0, 0, 0.02); /* لون خلفية الجدول */
+  border-radius: 7px; /* تقريب الحواف */
+  overflow: auto; /* إضافة خاصية التمرير الأوتوماتيكي */
+}
+
+/* تعديل البطانة والهامش لخلايا الجدول */
+.mat-cell {
+  padding: 8px; /* البطانة داخل الخلية */
+  margin: 0; /* الهامش داخل الخلية */
+}
+
+.custom-button {
+  width: 200px; /* عرض الزر */
+  height: 45px; /* ارتفاع الزر */
+  margin-top: 8px; /* ترك مسافة من الأعلى */
+  color: white; /* تغيير لون النص */
+  border-radius: 5px; /* إضافة زوايا مستديرة */
+}

@@ -1,0 +1,72 @@
+<!-- بداية شريط الأدوات -->
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <!-- زر القائمة الجانبية -->
+  <button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <!-- عنوان الشريط -->
+  <span>My Remittances</span>
+  <!-- مساحة فارغة لملء الفراغ المتبقي -->
+  <span class="example-spacer"></span>
+  <!-- زر الصفحة الرئيسية -->
+  <button [routerLink]="'Home'" mat-button>Home</button>
+  
+  <!-- عرض اسم المكتب ورصيده -->
+  <button mat-icon-button [routerLink]="'viewreTrasfirnottrue'">
+    <mat-icon matBadgeColor="accent" [matBadge]="notificationCount" [matBadgeHidden]="!notificationCount" matBadgeSize="small">notifications</mat-icon>
+  </button>
+  <!-- زر تسجيل الخروج -->
+  <button mat-icon-button (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+  <!-- عرض الرصيد الحالي للمكتب -->
+  <ng-container>
+    <ng-container>
+      <div class="currentBalance">currentBalance: {{ office?.currentBalance | currency:'USD'  }}</div>
+    </ng-container>
+  </ng-container>
+  <!-- عرض اسم المستخدم -->
+  <ng-container *ngIf="user">
+    <div class="userType">{{ user.user.userName }}</div>
+  </ng-container>
+</mat-toolbar>
+<!-- نهاية شريط الأدوات -->
+
+<!-- بداية حاوية الدرج الجانبي والمحتوى -->
+<mat-drawer-container autosize>
+  <!-- الدرج الجانبي -->
+  <mat-drawer #drawer opened="true" mode="side" position="start">
+    <!-- قائمة الروابط -->
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button [routerLink]="'Home'"><mat-icon>home</mat-icon> Home</button> <!-- الصفحة الأساسية -->
+      </mat-list-item>
+      <mat-list-item>
+        <button [routerLink]="'exchangePrices'" mat-button><mat-icon>attach_money</mat-icon> currency exchange</button> <!-- صرف العملات -->
+      </mat-list-item>
+      <mat-list-item>
+        <button [routerLink]="'creatTransfir'" mat-button><mat-icon>forward_to_inbox</mat-icon> Create a transfer</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button [routerLink]="'viewreTrasfirtrue'" mat-button><mat-icon>hotel_class</mat-icon> My remittances</button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <!-- نهاية الدرج الجانبي -->
+
+  <!-- بداية محتوى الصفحة -->
+  <mat-drawer-content>
+    <div>
+      <!-- محتوى الصفحة -->
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+  <!-- نهاية محتوى الصفحة -->
+</mat-drawer-container>
+<!-- نهاية حاوية الدرج الجانبي والمحتوى -->
+
+<!-- بداية الفوتر -->
+<mat-toolbar color="primary" class="footer">
+  <span>&copy; 2024 My Company. All rights reserved.</span>
+</mat-toolbar>
+<!-- نهاية الفوتر -->

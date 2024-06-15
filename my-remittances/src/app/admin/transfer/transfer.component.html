@@ -1,0 +1,77 @@
+<!-- هون في كونتينر بيحمل كل الكود -->
+<div class="container">
+  <!-- عنوان للصفحة -->
+  <h2>All transfers</h2>
+
+  <!--  الفلتر  -->
+  <div class="form-container">
+    <!--   للتحكم بعرض البيانات المستلمة -->
+    <mat-checkbox class="checkbox" [(ngModel)]="filterDelivered" (change)="applyFilter()">Show only received transfers</mat-checkbox>
+    <!--   للتحكم بعرض البيانات الغير مستلمة -->
+    <mat-checkbox class="checkbox" [(ngModel)]="filterUndelivered" (change)="applyFilter()">Show only undelivered transfers</mat-checkbox><br>
+  </div>
+
+  <!-- جدول يعرض البيانات -->
+  <table mat-table [dataSource]="filteredData$" class="mat-elevation-z8">
+    <!-- عنوان لعمود الكمية -->
+    <ng-container matColumnDef="amount">
+      <th mat-header-cell *matHeaderCellDef>Amount</th>
+      <!-- القيمة في هذا العمود -->
+      <td mat-cell *matCellDef="let item">{{ item.amount | currency:'USD' }}</td>
+    </ng-container>
+
+    <!-- عنوان لعمود الحالة -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <!-- القيمة في هذا العمود -->
+      <td mat-cell *matCellDef="let item">{{ item.status ? 'تم التسليم' : 'غير مسلمة' }}</td>
+    </ng-container>
+
+    <!-- عنوان لعمود تاريخ الانشاء -->
+    <ng-container matColumnDef="createdDate">
+      <th mat-header-cell *matHeaderCellDef>Created Date</th>
+      <!-- القيمة في هذا العمود مع تحويل التاريخ الى الصيغة المطلوبة -->
+      <td mat-cell *matCellDef="let item">{{ item.createdAt | date: 'yyyy-MM-dd' }}</td>
+    </ng-container>
+
+    <!-- عنوان لعمود وقت الانشاء -->
+    <ng-container matColumnDef="createdTime">
+      <th mat-header-cell *matHeaderCellDef>Created Time</th>
+      <!-- القيمة في هذا العمود مع تحويل الوقت الى الصيغة المطلوبة -->
+      <td mat-cell *matCellDef="let item">{{ item.createdAt | date: 'HH:mm:ss' }}</td>
+    </ng-container>
+
+    <!-- عنوان لعمود تاريخ التحديث -->
+    <ng-container matColumnDef="updatedDate">
+      <th mat-header-cell *matHeaderCellDef>Updated Date</th>
+      <!-- القيمة في هذا العمود مع تحويل التاريخ الى الصيغة المطلوبة -->
+      <td mat-cell *matCellDef="let item">{{ item.updatedAt | date: 'yyyy-MM-dd' }}</td>
+    </ng-container>
+
+    <!-- عنوان لعمود وقت التحديث -->
+    <ng-container matColumnDef="updatedTime">
+      <th mat-header-cell *matHeaderCellDef>Updated Time</th>
+      <!-- القيمة في هذا العمود مع تحويل الوقت الى الصيغة المطلوبة -->
+      <td mat-cell *matCellDef="let item">{{ item.updatedAt | date: 'HH:mm:ss' }}</td>
+    </ng-container>
+
+    <!-- عنوان لعمود المرسل -->
+    <ng-container matColumnDef="senderName">
+      <th mat-header-cell *matHeaderCellDef>Sender</th>
+      <!-- القيمة في هذا العمود -->
+      <td mat-cell *matCellDef="let item">{{ item.sender.name }}</td>
+    </ng-container>
+
+    <!-- عنوان لعمود المستلم -->
+    <ng-container matColumnDef="receiverName">
+      <th mat-header-cell *matHeaderCellDef>Receiver</th>
+      <!-- القيمة في هذا العمود -->
+      <td mat-cell *matCellDef="let item">{{ item.receiver.name }}</td>
+    </ng-container>
+
+    <!-- تحديد صف العناوين -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <!-- تحديد صفوف البيانات -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

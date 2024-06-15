@@ -1,0 +1,82 @@
+.navbar {
+  background-color: #556B2F; /* لون خلفية الشريط - اللون الزيتي */
+  z-index: 1000; /* قيمة z-index للهيدر */
+}
+
+.navbar-brand {
+  color: #fff6f6; /* لون النص - الأبيض */
+}
+
+.navbar-nav .nav-link {
+  color: #fff; /* لون الروابط - الأبيض */
+}
+
+.navbar-toggler-icon {
+  color: #fff; /* لون رمز القائمة المنسدلة في الحالة المطوية - الأبيض */
+}
+
+/* هاد الكلاس مستخدم لتنسيق نص معين بصفحة المستخدمين */
+.user-type-text {
+  color: #f03372; /* اللون الزهري */
+  margin-left: 55%; /* ترك مسافة من اليسار */
+  font-size: 12px; /* حجم الخط */
+  font-weight: bold; /* خط غامق */
+  text-transform: uppercase; /* تحويل النص لأحرف كبيرة */
+}
+
+.userType {
+  margin-left: 12px; /* ترك مسافة من اليسار */
+  margin-right: 2%; /* ترك مسافة من اليمين */
+  text-align: right; /* يخلي النص عاليمين */
+  color: #f03372; /* اللون الزهري */
+  font-size: 12px; /* حجم الخط */
+  font-weight: bold; /* خط غامق */
+  text-transform: uppercase; /* تحويل النص لأحرف كبيرة */
+}
+
+/* تنسيقات الفوتر */
+.footer {
+  background-color: rgba(0,0,0,0.3); /* لون الخلفية */
+  border-radius: 3px; /* تقريب الحواف */
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.8), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12); /* الظل */
+  margin-top: 15px; /* ترك مسافة من الأعلى */
+  bottom: 0; /* موقع الفوتر بالنهاية */
+  width: 100%; /* عرض الفوتر 100% */
+  text-align: center; /* النص بالنص */
+}
+/* إزالة الحدود من mat-form-field */
+.custom-form-field .mat-form-field-outline,
+.custom-form-field .mat-form-field-outline,
+.custom-form-field .mat-form-field-outline-end {
+  display: none;
+}
+
+/* تصغير عرض mat-form-field */
+.custom-form-field {
+  width: 70px; /* يمكنك تعديل العرض حسب الحاجة */
+  height: 60px;
+  margin-left: 50%; /* ترك مسافة من اليسار */
+
+}
+
+/* تصغير حجم الصور داخل mat-select */
+.flag-icon {
+  width: 20px;
+  height: 15px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* تعديل المسافة بين الصور والنصوص */
+.mat-option-text {
+  display: flex;
+  align-items: center;
+}
+
+/* تعديل حجم وخطوط النصوص */
+.mat-option-text {
+  font-size: 14px;
+}
+
+
+

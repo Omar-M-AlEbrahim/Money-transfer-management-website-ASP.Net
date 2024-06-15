@@ -1,0 +1,111 @@
+<div class="container">
+  <!-- Create New Office Title -->
+  <h2>Create New Office</h2>
+  
+  <!-- New Office Addition Form -->
+  <form #tempofficeadd="ngForm" (ngSubmit)="submitForm(tempofficeadd)">
+    <!-- Office Name Field -->
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" ngModel name="Name" required>
+    </mat-form-field>
+    
+    <!-- Country Field -->
+    <mat-form-field>
+      <mat-label>Country</mat-label>
+      <input matInput placeholder="Country" ngModel name="Country" required>
+    </mat-form-field>
+    
+    <!-- Governorate Field -->
+    <mat-form-field>
+      <mat-label>Governorate</mat-label>
+      <input matInput placeholder="Governorate" ngModel name="Governorate" required>
+    </mat-form-field>
+    
+    <!-- City Field -->
+    <mat-form-field>
+      <mat-label>City</mat-label>
+      <input matInput placeholder="City" ngModel name="City" required>
+    </mat-form-field>
+    
+    <!-- Current Balance Field -->
+    <mat-form-field>
+      <mat-label>Current Balance</mat-label>
+      <input matInput placeholder="Current Balance" ngModel name="currentBalance" type="number" required>
+    </mat-form-field>
+    
+    <!-- User Field -->
+    <mat-form-field>
+      <mat-label>User</mat-label>
+      <mat-select placeholder="User" ngModel name="userId" required>
+        <ng-container *ngFor="let user of users$ | async">
+          <mat-option [value]="user.id" *ngIf="user.officeId === '00000000-0000-0000-0000-000000000000'">{{ user.userName }}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+    
+    <!-- Create Office Button -->
+    <button type="submit" mat-flat-button color="primary">Create Office</button>
+  </form>
+</div>
+
+<!-- Office List -->
+<div class="container mt-5">
+  <!-- Office List Title -->
+  <h2>Office List</h2>
+  
+  <!-- Office Display Table -->
+  <table mat-table [dataSource]="userOffices$ | async" class="mat-elevation-z8">
+    <!-- Office Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let office"> {{ office.name }} </td>
+    </ng-container>
+    
+    <!-- Country Column -->
+    <ng-container matColumnDef="country">
+      <th mat-header-cell *matHeaderCellDef> Country </th>
+      <td mat-cell *matCellDef="let office"> {{ office.country }} </td>
+    </ng-container>
+    
+    <!-- Governorate Column -->
+    <ng-container matColumnDef="governorate">
+      <th mat-header-cell *matHeaderCellDef> Governorate </th>
+      <td mat-cell *matCellDef="let office"> {{ office.governorate }} </td>
+    </ng-container>
+    
+    <!-- City Column -->
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef> City </th>
+      <td mat-cell *matCellDef="let office"> {{ office.city }} </td>
+    </ng-container>
+    
+    <!-- Current Balance Column -->
+    <ng-container matColumnDef="currentBalance">
+      <th mat-header-cell *matHeaderCellDef> Current Balance </th>
+      <td mat-cell *matCellDef="let office"> {{ office.currentBalance | currency:'USD' }} </td>
+    </ng-container>
+    
+    <!-- User Name Column -->
+    <ng-container matColumnDef="userName">
+      <th mat-header-cell *matHeaderCellDef> User Name </th>
+      <td mat-cell *matCellDef="let office"> {{ office.user.userName }} </td>
+    </ng-container>
+    
+    <!-- Actions Column (Edit Office) -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let office">
+        <button mat-icon-button color="primary" (click)="editOffice(office.officeId)">
+          <mat-icon>edit</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    
+    <!-- Header Row -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    
+    <!-- Data Row -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

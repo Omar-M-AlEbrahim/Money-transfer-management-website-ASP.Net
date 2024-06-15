@@ -1,0 +1,37 @@
+.mat-toolbar {
+  display: flex; /* يعرض العناصر بشكل مرن */
+  align-items: center; /* يوسط العناصر عموديًا */
+}
+
+.userType {
+  text-align: right; /* يضع النص على اليمين */
+  color: #f03372; /* قيمة HEX للون الزهري */
+  font-size: 12px; /* حجم الخط */
+  font-weight: bold; /* نمط الخط عريض */
+  text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
+}
+
+.currentBalance {
+  margin-left: 50%; /* مسافة من اليسار بنسبة 50% */
+  margin-right: 2%; /* مسافة من اليمين بنسبة 2% */
+  text-align: right; /* يضع النص على اليمين */
+  color: #f03372; /* قيمة HEX للون الزهري */
+  font-size: 12px; /* حجم الخط */
+  font-weight: bold; /* نمط الخط عريض */
+  text-transform: uppercase; /* تحويل النص إلى أحرف كبيرة */
+}
+
+.logout-button {
+  margin-left: auto; /* يضع الزر في أقصى اليمين */
+}
+
+/* تنسيقات الفوتر */
+.footer {
+  background-color: rgba(0, 0, 0, 0.3); /* لون الخلفية */
+  border-radius: 3px; /* تقريب الحواف */
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.8), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12); /* الظل */
+  margin-top: 15px; /* مسافة من الأعلى */
+  bottom: 0; /* تثبيت العنصر في الأسفل */
+  width: 100%; /* عرض العنصر 100% */
+  text-align: center; /* محاذاة النص إلى الوسط */
+}

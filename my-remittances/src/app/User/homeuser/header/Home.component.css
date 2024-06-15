@@ -1,0 +1,62 @@
+.card {
+  height: 230px;
+  background-color: #c5b4b4;
+  border-radius: 8px; /* تقريب الحواف */
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12); /* الظل */
+  margin: 16px; /* الهامش حول البطاقة */
+  padding: 16px; /* البطانة داخل البطاقة */
+  align-items: start; /* محاذاة العناصر في البداية */
+  justify-content: space-between; /* توزيع العناصر بالتساوي */
+}
+
+.card-image {
+  border: rebeccapurple 1px solid; /* حافة الصورة */
+  margin-top: 30px; /* مسافة من الأعلى */
+  height: 100px; /* ارتفاع الصورة */
+  overflow: hidden; /* إخفاء الزائد */
+  border-radius: 20px; /* تقريب الحواف */
+  margin-left: 370px; /* مسافة من اليسار */
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.5), 0px 3px 1px 0px rgba(0,0,0,0.14), 6px 0px 0px -1px rgba(0,0,0,0.9); /* الظل */
+  opacity: 70%; /* شفافية الصورة */
+}
+
+.small-cards-container {
+  
+  display: flex;
+  flex-direction: row; /* توزيع البطاقات أفقيًا */
+  justify-content: space-between; /* توزيع البطاقات بالتساوي بينها */
+}
+
+.small-card {
+  background-color: #c5b4b4; /* لون الخلفية */
+  border-radius: 8px; /* تقريب الحواف */
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 2px 1px -1px rgba(0,0,0,0.12); /* الظل */
+  margin: 16px; /* الهامش حول البطاقة */
+  padding: 16px; /* البطانة داخل البطاقة */
+  width: calc(50% - 16px); /* توزيع البطاقات بالتساوي في السطر */
+}
+
+
+
+/* محتوى الكرت */
+.mat-card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* ترتيب المحتوى عموديًا */
+  justify-content: center; /* محاذاة المحتوى عموديًا في المركز */
+  align-items: center; /* محاذاة المحتوى أفقيًا في المركز */
+  margin-bottom: 10px; /* مسافة من الأسفل */
+}
+
+/* العناصر النصية */
+.userType {
+  font-size: 18px; /* حجم الخط */
+  margin-bottom: 5px; /* مسافة من الأسفل */
+  color: #333; /* لون النص */
+}
+
+/* العناصر البيانية */
+.userType span {
+  font-weight: bold; /* جعل النص عريض */
+  color: #007bff; /* لون النص */
+}

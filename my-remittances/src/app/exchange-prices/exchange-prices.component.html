@@ -1,0 +1,29 @@
+@if (data$ ) {
+    <div class="mat-title-container">
+        <h3>Currency exchange rates</h3>
+      </div>    <div class="mat-table-container">
+        <table class="mat-table">
+          <thead>
+            <tr>
+              <th>the currency</th>
+              <th>the value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  (mouseleave)="hoveredRow = -1" [ngClass]="{'mat-row-hovered': hoveredRow === 2}">
+                <td>Dollar</td>
+                <td>{{ data$.USD }}</td>
+              </tr>
+            <tr  (mouseleave)="hoveredRow = -1" [ngClass]="{'mat-row-hovered': hoveredRow === 0}">
+              <td>EUR</td>
+              <td>{{ data$.EUR }}</td>
+            </tr>
+            <tr  (mouseleave)="hoveredRow = -1" [ngClass]="{'mat-row-hovered': hoveredRow === 1}">
+              <td>TRY</td>
+              <td>{{ data$.TRY }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+}

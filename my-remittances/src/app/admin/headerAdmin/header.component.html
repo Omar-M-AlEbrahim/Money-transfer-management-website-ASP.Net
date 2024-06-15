@@ -1,0 +1,76 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{ translations?.['my_remittances'] || 'Default Remittances' }}</span>
+  <span class="example-spacer"></span>
+  <button [routerLink]="'home'" mat-button>{{ translations?.['home'] || 'Home' }}</button>
+ 
+  <button [routerLink]="'trasfir'" mat-icon-button>
+    <mat-icon matBadgeColor="accent">notifications</mat-icon>
+</button>
+
+<button mat-icon-button (click)="logout()">
+  <mat-icon>exit_to_app</mat-icon>
+</button>
+  <mat-form-field appearance="outline" class="custom-form-field">
+    <mat-select [(value)]="selectedLanguage" (selectionChange)="onLanguageChange($event.value)">
+      <mat-select-trigger>
+        <img *ngIf="selectedLanguage === 'en'" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" 
+          alt="{{ translations?.['english'] || 'English' }}" class="flag-icon">
+        <img *ngIf="selectedLanguage === 'ar'" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY1wnC3fETtFbLqgtTx1p8pF2E0AX9R-K23g&s"
+          alt="{{ translations?.['arabic'] || 'Arabic' }}" class="flag-icon">
+        {{ selectedLanguage === 'en' ? translations?.['english'] || 'English' : translations?.['arabic'] || 'Arabic' }}
+      </mat-select-trigger>
+      <mat-option value="en">
+        <span class="mat-option-text">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" 
+            alt="{{ translations?.['english'] || 'English' }}" class="flag-icon">
+          {{ translations?.['english'] || 'English' }}
+        </span>
+      </mat-option>
+      <mat-option value="ar">
+        <span class="mat-option-text">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY1wnC3fETtFbLqgtTx1p8pF2E0AX9R-K23g&s"
+            alt="{{ translations?.['arabic'] || 'Arabic' }}" class="flag-icon">
+          {{ translations?.['arabic'] || 'Arabic' }}
+        </span>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <ng-container *ngIf="user">
+    <div class="userType">{{ translations?.['user'] || 'User' }} {{ user.role.name }}</div>
+  </ng-container>
+  <ng-container *ngIf="user">
+    <div class="userType m-0">{{ translations?.['user'] || 'User' }} {{ user?.user?.userName }}</div>
+  </ng-container>
+</mat-toolbar>
+
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="true" mode="side" position="start">
+    <mat-nav-list>
+      <mat-list-item>
+        <button mat-button [routerLink]="'home'"><mat-icon>home</mat-icon> {{ translations?.['home'] || 'Home' }}</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button [routerLink]="'exchangePrices'" mat-button><mat-icon>attach_money</mat-icon> {{ translations?.['currency_exchange'] || 'Currency Exchange' }}</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button [routerLink]="'officedata'" mat-button><mat-icon>meeting_room</mat-icon> {{ translations?.['office'] || 'Office' }}</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button [routerLink]="'userdata'" mat-button><mat-icon>person</mat-icon> {{ translations?.['users'] || 'Users' }}</button>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<mat-toolbar color="primary" class="footer">
+  <span>{{ translations?.['rights_reserved'] || 'All rights reserved' }}</span>
+</mat-toolbar>
+

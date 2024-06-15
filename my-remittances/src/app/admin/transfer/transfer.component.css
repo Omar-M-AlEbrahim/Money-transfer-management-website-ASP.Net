@@ -1,0 +1,67 @@
+.container {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px; /* زيادة قليلاً لحدة الزوايا */
+  background-color: #f8f9fa;
+}
+
+h2 {
+  font-size: 28px; /* زيادة حجم العنوان */
+  margin-bottom: 20px;
+  color: #343a40;
+}
+
+.form-container {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px; /* زيادة الهوامش الداخلية لحاوية النموذج */
+  border: 2px solid #278ef5; /* زيادة سمك الحدود */
+  border-radius: 10px;
+  background-color: #f0f8ff; /* تغيير لون خلفية حاوية النموذج */
+}
+
+.mat-checkbox {
+  margin-bottom: 10px; /* فاصل بين عناصر الاختيار */
+  color: #3f51b5; /* لون النص */
+}
+
+.mat-checkbox-input {
+  margin-right: 5px; /* فاصل بين العلبة والنص */
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px; /* زيادة حجم الهوامش الداخلية للخلايا */
+  text-align: center; /* محاذاة النص في الوسط */
+}
+
+th {
+  font-weight: bold;
+  background-color: #e6dee4;
+}
+
+tr:nth-child(odd) {
+  background-color: #f0f0f0; /* تغيير لون خلفية الصفوف */
+}
+
+tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+th, td {
+  border-bottom: 1px solid #ccc;
+}
+
+th:last-child, td:last-child {
+  border-right: 1px solid #ccc;
+}

@@ -1,0 +1,66 @@
+.container {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.mat-table thead th {
+  background-color: #3f51b5;
+  color: white;
+}
+span{
+  color:#3f51b5;
+}
+
+button {
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.divbtn {
+  width: 100px;
+  display: block;
+}
+
+.table-container {
+  overflow-x: auto; /* تمكين التمرير الأفقي للجدول إذا كانت العمودية غير كافية */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  font-weight: bold;
+  background-color: #e6dee4; /* لون خلفية رأس الجدول */
+}
+
+tr:nth-child(odd) {
+  background-color: #f8f9fa; /* لون خلفية الصفوف الفردية */
+}
+
+tr:nth-child(even) {
+  background-color: #e9ecef; /* لون خلفية الصفوف الزوجية */
+}
+
+th, td {
+  border-bottom: 1px solid #ced4da; /* لون خط الحدود بين الصفوف */
+}
+
+th:last-child, td:last-child {
+  border-right: 1px solid #ced4da; /* لون خط الحدود بين الأعمدة */
+}
